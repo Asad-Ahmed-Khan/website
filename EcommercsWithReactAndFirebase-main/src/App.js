@@ -33,7 +33,7 @@ export class App extends Component {
             else {
                 this.setState({
                     user: null,
-                    userId: null
+                    userId: null,
                 })
             }
         })
