@@ -9,6 +9,7 @@ export const Products = () => {
     const { products } = useContext(ProductsContext);
 
     const { dispatch } = useContext(CartContext);
+  
 
     return (
         <>
@@ -30,6 +31,8 @@ export const Products = () => {
                     <StarRating product={product}  /></div>
                     <p style={{margin:'auto'}}>{Number(product?.rating).toFixed(2) || 0}</p>
                         <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}>ADD TO CART</button>
+                   
+                     
                     </div>
                 ))}
             </div>

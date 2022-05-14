@@ -19,7 +19,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-simple-star-rating": "^4.0.5",
-    "react-toastify": "^6.1.0"
+    "react-toastify": "^6.1.0",
+    "redux": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
