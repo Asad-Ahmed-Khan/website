@@ -1,5 +1,5 @@
 import React, { createContext } from 'react'
-import { auth, db } from '../Config/Config'
+import { auth, db } from '../Config/config'
 
 export const ProductsContext = createContext();
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { auth } from '../Config/Config'
+import { auth } from '../Config/config'
 import { Link } from 'react-router-dom'
 import "./login.css"
 

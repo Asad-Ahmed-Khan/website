@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Rate } from "antd";
-import { db } from "../Config/Config";
+import { db } from "../Config/config";
 import { ProductsContext } from "../Global/ProductsContext";
+
 
 const StarRating = ({ product }) => {
     const [rating, setRating] = useState(null);

@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
-import { Navbar } from './Navbar';
+import Navbar  from './Navbar';
+import SubNavbar from './SubNavbar'
 import { Products } from './Products'
 import { useHistory } from 'react-router-dom'
-import { auth } from '../Config/Config'
+import { auth } from '../Config/config'
 import { ProductsContext } from '../Global/ProductsContext';
+
+
 
 export const Home = ({ user }) => {
 
@@ -20,6 +23,7 @@ export const Home = ({ user }) => {
 
     return (
         <div className='wrapper'>
+            {/* <SubNavbar /> */}
             <Navbar user={user} />
             <Products />
         </div>

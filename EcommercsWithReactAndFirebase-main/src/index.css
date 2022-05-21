@@ -32,19 +32,29 @@ body {
 /* navbar */
 .navbox {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 30px;
+ 
 }
-
+.navbar-nave {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    padding-top: 12px;
+}
+svg{
+    color: white;
+}
 .navbox .leftside {
-    width: 120px;
-    height: 110px;
+    width: 81px;
+  
 }
 
 .navbox .leftside img {
     width: 100%;
     height: 100%;
+    margin-left: -100px;
 }
 
 .navbox .rightside {
@@ -80,7 +90,12 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+.nav-link{
+    color: rgb(151, 148, 148);
+}
+.nav-link:hover{
+color: white;
+}
 .logout-btn {
     padding: 5px;
     border-radius: 3px;

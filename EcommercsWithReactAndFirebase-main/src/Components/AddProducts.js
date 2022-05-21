@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import { storage, db } from '../Config/Config'
+import { storage, db } from '../Config/config'
 
 export const AddProducts = ({userId}) => {
 

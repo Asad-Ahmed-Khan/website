@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { auth, db } from '../Config/Config'
+import { auth, db } from '../Config/config'
 import { CartContext } from '../Global/CartContext'
-import { Navbar } from './Navbar';
+import Navbar from './Navbar';
 import { useHistory } from 'react-router-dom'
 
 export const Cashout = (props) => {
