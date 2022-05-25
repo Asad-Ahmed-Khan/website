@@ -28,7 +28,7 @@ const Navbar = ({ logoutUser }) => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink exact to="/admin/dashboard/Products" className="nav-link">
+          <NavLink exact to="/admin/dashboard/posts" className="nav-link">
             All Posts
           </NavLink>
         </li>

@@ -3,7 +3,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getPosts } from "../../redux/actionCreators/postsActionCreator";
 import PostCard from "./PostCard";
-
+import './postcard.css'
 const Posts = () => {
   const { postsLoading, allPosts, userId } = useSelector(
     (state) => ({
@@ -34,9 +34,9 @@ const Posts = () => {
           <h1 className="text-center">Loading Posts...</h1>
         ) : posts.length > 0 ? (
           <>
-            {posts.map((post, id) => (
-              <PostCard post={post} key={id} id={id} />
-            ))}
+            {/* {posts.map((post, id) => ( */}
+              <PostCard posts={posts} key={'id'} id={'id'} />
+            {/* ))} */}
           </>
         ) : (
           <h1 className="text-center">

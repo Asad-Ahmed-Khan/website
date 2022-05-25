@@ -11,14 +11,15 @@ const AddPost = () => {
 
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [progress, setProgress] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!title || !category || !description) {
+    
+    if (!title || !category || !price || !description) {
       return toast.warning("Please fill in all fields!");
     }
 
@@ -26,7 +27,7 @@ const AddPost = () => {
       return toast.warning("Please select an image!");
     }
 
-    if (description.length < 100) {
+    if (description.length < 50) {
       return toast.info("Description should be of atleast 100");
     }
     if (title.trim().split(" ").length < 2) {
@@ -38,6 +39,7 @@ const AddPost = () => {
     const data = {
       title,
       category,
+      price,
       description,
       image,
     };
@@ -99,6 +101,15 @@ const AddPost = () => {
                   className="form-control"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="Price"
+                  placeholder="Price"
+                  className="form-control"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
               <div className="form-group">

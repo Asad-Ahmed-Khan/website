@@ -55,7 +55,7 @@ const StarRating = ({ product }) => {
                     </label>
                 );
             })} */}
-            <Rate defaultValue={0} onChange={addRating} />
+            <Rate defaultValue={0} value={rating} onChange={addRating} />
         </div>
     )
 }

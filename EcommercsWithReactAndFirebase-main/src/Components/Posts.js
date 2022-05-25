@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getPosts } from "../redux/actionCreators/postsActionCreator";
-
+import { CartContext } from '../Global/CartContext'
+import StarRating from "../Components/StarRating"
+import '../admin/Dashboard/postcard.css'
 const Posts = () => {
+
   const { posts, postsLoading, isLoggedIn, userId } = useSelector(
     (state) => ({
       posts: state.posts.posts,
@@ -38,7 +41,7 @@ const Posts = () => {
               All Posts
             </p>
           </div>
-          <div className="row my-5">
+          <div className="row my-5 ">
             {postsLoading
               ? "Loading posts"
               : latestPosts.map((post, id) => (
@@ -52,8 +55,11 @@ const Posts = () => {
                       className="card-img-top border-bottom"
                     />
                     <div className="card-body px-5">
-                      <h2 className="card-title text-capitalize">
+                      <h4 className="card-title text-capitalize">
                         {post.post.title}
+                      </h4>
+                      <h2 className="card-title text-capitalize">
+                        {post.post.price}
                       </h2>
                       <p className="card-text text-heading text-*-justify">
                         {post.post.description.substring(0, 1).toUpperCase() +
@@ -71,33 +77,10 @@ const Posts = () => {
                         ))}
                       </div>
                     </div>
-                    <div className="card-footer d-flex align-items-center justify-content-between bg-white pb-3 px-5 border-0">
-                      {isLoggedIn && post.post.author === userId ? (
-                        <>
-                          <Link
-                            to={`/post/${post.postId}/${post.post.title}`}
-                            className="btn btn-primary"
-                          >
-                            <i className="fa fa-eye"></i> See Post
-                          </Link>
-                          <div className="btns">
-                            <Link
-                              to={`/admin/post/${post.postId}/edit`}
-                              className="btn btn-outline-primary mr-2"
-                            >
-                              <i className="fa fa-pencil"></i> Manage Post
-                            </Link>
-                          </div>
-                        </>
-                      ) : (
-                        <Link
-                          to={`/post/${post.postId}/${post.post.title}`}
-                          className="btn btn-block btn-primary"
-                        >
-                          <i className="fa fa-eye"></i> See Post
-                        </Link>
-                      )}
-                    </div>
+                    <div style={{margin:'auto'}} >
+                    <StarRating product={post}  /></div>
+                    <p style={{margin:'auto'}}>{Number(post?.rating || 0).toFixed(2)}</p>
+                        <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id: post.PostID, post })}>ADD TO CART</button>
                   </div>
                 ))}
           </div>

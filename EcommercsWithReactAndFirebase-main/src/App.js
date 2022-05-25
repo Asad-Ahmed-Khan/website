@@ -22,7 +22,7 @@ import SeePost from "./admin/Dashboard/SeePost";
 import Admin from "./admin";
 import Posts from "./Components/Posts";
 import { fire } from "./Config/config"
-import Offline from "./Components/Offline";
+import Offline from "./Components/offline";
 
 
 const App = () => {
